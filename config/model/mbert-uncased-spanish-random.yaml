@@ -1,0 +1,15 @@
+name: bert-base-multilingual-uncased
+class_name: AutoModelForSequenceClassification
+tokenizer_class: AutoTokenizer
+tokenizer_name: bert-base-multilingual-uncased
+inner_params:
+- bert.encoder.layer.2.intermediate.dense.weight
+- bert.encoder.layer.2.output.dense.weight
+- bert.encoder.layer.4.intermediate.dense.weight
+- bert.encoder.layer.4.output.dense.weight
+- bert.encoder.layer.6.intermediate.dense.weight
+- bert.encoder.layer.6.output.dense.weight
+- bert.encoder.layer.9.intermediate.dense.weight
+- bert.encoder.layer.9.output.dense.weight
+
+pt: ${hydra:runtime.cwd}/data/fever/mbert_models/mbert-uncased-spanish-6562iter.bin

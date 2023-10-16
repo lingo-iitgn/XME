@@ -1,0 +1,31 @@
+ModuleDict(
+  ((768, 3072)): GradientTransform(
+    (mlp): IDMLP(
+      (layers): ModuleList(
+        (0): LRLinear(
+          (mode_shift): Embedding(3, 3840)
+          (mode_scale): Embedding(3, 3840)
+        )
+        (1): LRLinear(
+          (mode_shift): Embedding(3, 3840)
+          (mode_scale): Embedding(3, 3840)
+        )
+      )
+    )
+  )
+  ((3072, 768)): GradientTransform(
+    (mlp): IDMLP(
+      (layers): ModuleList(
+        (0): LRLinear(
+          (mode_shift): Embedding(3, 3840)
+          (mode_scale): Embedding(3, 3840)
+        )
+        (1): LRLinear(
+          (mode_shift): Embedding(3, 3840)
+          (mode_scale): Embedding(3, 3840)
+        )
+      )
+    )
+  )
+)
+====================================================================================================

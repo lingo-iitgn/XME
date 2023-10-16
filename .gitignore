@@ -1,0 +1,20 @@
+**/__pycache__/
+**/cache/
+**/data/
+env/
+mend_env/
+outputs/
+.vscode/
+**/zip/
+*.bk
+logs/
+logs_mbert/
+logs_run4/
+logs-locality/
+logs-locality copy/
+logs-locality-paper/
+him-param-outputs/
+param-outputs/
+wandb/
+trash/
+pheonix-outputs/

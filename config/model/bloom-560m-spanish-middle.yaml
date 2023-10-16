@@ -1,0 +1,15 @@
+name: bigscience/bloom-560m
+class_name: BloomForSequenceClassification
+tokenizer_class: BloomTokenizerFast
+tokenizer_name: bigscience/bloom-560m
+inner_params:
+- transformer.h.14.mlp.dense_h_to_4h.weight
+- transformer.h.14.mlp.dense_4h_to_h.weight
+- transformer.h.15.mlp.dense_h_to_4h.weight
+- transformer.h.15.mlp.dense_4h_to_h.weight
+- transformer.h.16.mlp.dense_h_to_4h.weight
+- transformer.h.16.mlp.dense_4h_to_h.weight
+- transformer.h.17.mlp.dense_h_to_4h.weight
+- transformer.h.17.mlp.dense_4h_to_h.weight
+
+pt: ${hydra:runtime.cwd}/data/fever/bloom_models/bloom-560m-1L-spanish-6562iter.bin

@@ -1,0 +1,13 @@
+name: gpt2-medium
+class_name: GPT2ForSequenceClassification
+tokenizer_class: GPT2TokenizerFast
+tokenizer_name: gpt2-medium
+inner_params:
+- transformer.h.9.mlp.c_proj.weight
+- transformer.h.9.mlp.c_fc.weight
+- transformer.h.10.mlp.c_proj.weight
+- transformer.h.10.mlp.c_fc.weight
+- transformer.h.11.mlp.c_proj.weight
+- transformer.h.11.mlp.c_fc.weight
+
+pt: ${hydra:runtime.cwd}/data/fever/gpt2-medium.bin

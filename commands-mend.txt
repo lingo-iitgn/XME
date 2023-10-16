@@ -1,0 +1,520 @@
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend ++loc_acc=True +experiment=fc +model=bloom-560m-kannada-full ++archive=/home/anonymous-xme/mend/mend/outputs/2023-07-14_09-57-43_1266804110/models/bloom-560m.2023-07-14_09-57-43_1266804110 +train_set="fever/old-dataset/fever_train_1200 - english_1200.jsonl" +val_set="fever/experiment/fever_dev_1200 - english.jsonl" +tests=True  ++edit_lang=english| tee logs-locality/test.txt
+
+# ALL Layers
+
+# mBERT - All
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-all +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-all.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-all +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-all.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-all +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-all.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-all +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-all.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-all +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-all.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-all +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-all.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-all +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-all.txt
+
+#BLOOM FULL Layers
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-full +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-full.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-full +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-full +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-full +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-full.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-full +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-full.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-full +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-full.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-full +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-full.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-full +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-full.txt
+
+#XLM-RoBERTa FULL Layers
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-english-full +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-english-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-hindi-full +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-hindi-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-spanish-full +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-spanish-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-french-full +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-french-full.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-bengali-full +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-bengali-full.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=xlm-roberta-gujarati-full +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-gujarati-full.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-mixed-full +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-mixed-full.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-inverse-full +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-inverse-full.txt
+
+#mBERT FULL Layers
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-full +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-full +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-full +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-full.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-full +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-full.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-full +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-full.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-full +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-full.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-full +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-full.txt
+
+
+===============================================================================================================================================
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bert-base-multilingual-uncased_mid_layers +train_set="fever/fever_train_1200 - spanish_1200.jsonl" +val_set="fever/fever_dev_1200 - spanish_1200.jsonl" +tests=False | tee finetuning_mned_mbert_mid_layers.txt
+
+
+# Finetune Model
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=ft +experiment=fc +model=bloom-560m-4layers-20-23 +tests=False | tee ft_mend_bloom_mid_layers.txt
+
+# Finetune MLPs (Change config.yaml)
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-4layers-20-23 +tests=False | tee logs/mlp_finetune.txt
+
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-4layers-20-23 +tests=False | tee logs/test.txt
+
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-last-layer +tests=False +lang=spanish | tee logs/mlp_finetune_spanish_last_layer.txt
+=========================================================================================================================================
+# SUBSET LAYERS
+
+
+# Bloom English
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-init-layers-1 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-init-1.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-init-layers-2 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-middle +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-last-layer +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-random +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-random.txt
+
+# Bloom French
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-init-layers-1 +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-init-1.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-init-layers-2 +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-middle +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-last-layer +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-random +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-bloom-560m-french-random.txt
+
+python run_our_experiments/bloom/run_our_experiments-french-init-layers-1.py 
+python run_our_experiments/bloom/run_our_experiments-french-middle.py
+python run_our_experiments/bloom/run_our_experiments-french-last-layer.py
+python run_our_experiments/bloom/run_our_experiments-french-random.py
+
+CUDA_VISIBLE_DEVICES=2 python bloom-506m-fever-hindi.py | tee logs/bloom/bloom-506m-fever-hindi-pred.txt
+
+# Bloom Hindi
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-init-layers-1 +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-init-layers-2 +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-init-2.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-middle +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-middle.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-last-layer +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-last.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-random +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-bloom-560m-hindi-random.txt
+
+CUDA_VISIBLE_DEVICES=2 python bloom-506m-fever-spanish.py | tee logs/bloom/bloom-506m-fever-spanish-pred.txt
+
+
+# Bengali
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-init-layers-1 +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-init-layers-2 +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-middle +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-last-layer +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-bengali-random +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-bloom-560m-bengali-random.txt
+
+# Malayalam
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-init-layers-1 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-init-layers-2 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-middle +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-last-layer +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-random +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-malayalam-full +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-bloom-560m-malayalam-full.txt
+
+# Tamil
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-init-layers-1 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-init-layers-2 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-middle +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-last-layer +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-last.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-random +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-random.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-tamil-full +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-bloom-560m-tamil-full.txt
+
+# Kannada
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-init-layers-1 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-init-layers-2 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-middle +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-last-layer +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-random +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-random.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-kannada-full +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-bloom-560m-kannada-full.txt
+
+# Chinese
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-init-layers-1 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-init-layers-2 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-middle +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-last-layer +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-last.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-random +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-chinese-full +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-bloom-560m-chinese-full.txt
+
+# Arabic
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-init-layers-1 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-init-layers-2 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-init-2.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-middle +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-middle.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-last-layer +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-last.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-random +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-random.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-arabic-full +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-bloom-560m-arabic-full.txt
+
+
+
+CUDA_VISIBLE_DEVICES=3 python bloom-506m-fever-spanish.py | tee logs/bloom/bloom-506m-fever-spanish-pred.txt
+
+
+# Bloom Spanish
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-init-layers-1 +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-init-layers-2 +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-middle +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-last-layer +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-random +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-bloom-560m-spanish-random.txt
+
+python run_our_experiments/bloom/run_our_experiments-spanish-init-layers-1.py 
+python run_our_experiments/bloom/run_our_experiments-spanish-middle.py
+python run_our_experiments/bloom/run_our_experiments-spanish-last-layer.py
+python run_our_experiments/bloom/run_our_experiments-spanish-random.py
+
+
+# Bloom Gujarati
+CUDA_VISIBLE_DEVICES=3 python bloom-506m-fever-gujarati.py | tee logs/bloom/bloom-506m-fever-gujarati-pred.txt
+
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-init-layers-1 +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-init-layers-2 +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-middle +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-last-layer +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-gujarati-random +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-bloom-560m-gujarati-random.txt
+
+python run_our_experiments/bloom/run_our_experiments-gujarati-init-layers-1.py 
+python run_our_experiments/bloom/run_our_experiments-gujarati-middle.py
+python run_our_experiments/bloom/run_our_experiments-gujarati-last-layer.py
+python run_our_experiments/bloom/run_our_experiments-gujarati-random.py
+
+
+# Bloom Mixed
+CUDA_VISIBLE_DEVICES=3 python bloom-506m-fever-mixed.py | tee logs/bloom/bloom-506m-fever-mixed-pred.txt
+
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-init-layers-1 +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-init-layers-2 +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-init-2.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-middle +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-last-layer +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-last.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-mixed-random +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-bloom-560m-mixed-random.txt
+
+python run_our_experiments/bloom/run_our_experiments-mixed-init-layers-1.py 
+python run_our_experiments/bloom/run_our_experiments-mixed-middle.py
+python run_our_experiments/bloom/run_our_experiments-mixed-last-layer.py
+python run_our_experiments/bloom/run_our_experiments-mixed-random.py
+
+# Bloom Inverse
+CUDA_VISIBLE_DEVICES=3 python bloom-506m-fever-inverse.py | tee logs/bloom/bloom-506m-fever-inverse-pred.txt
+
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-init-layers-1 +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-init-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-init-layers-2 +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-middle +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-last-layer +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-inverse-random +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-bloom-560m-inverse-random.txt
+
+python run_our_experiments/bloom/run_our_experiments-inverse-init-layers-1.py 
+python run_our_experiments/bloom/run_our_experiments-inverse-middle.py
+python run_our_experiments/bloom/run_our_experiments-inverse-last-layer.py
+python run_our_experiments/bloom/run_our_experiments-inverse-random.py
+
+======================================================================================================================================================
+#mBERT
+python mbert-uncased-fever-english.py | tee logs/mbert-spanish.txt
+python mbert-uncased-fever-hindi.py | tee logs/mbert-hindi.txt
+python mbert-uncased-fever-spanish.py | tee logs/mbert-spanish.txt
+python mbert-uncased-fever-french.py | tee logs/mbert-french.txt
+python mbert-uncased-fever-bengali.py | tee logs/mbert-bengali.txt
+python mbert-uncased-fever-gujarati.py | tee logs/mbert-gujarati.txt
+python mbert-uncased-fever-mixed.py | tee logs/mbert-mixed.txt
+
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-init-layers-1 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-init-layers-1 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-init-layers-1-test.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-middle +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-last-layer +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-random +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-english-random.txt
+
+#mbert-uncased - hindi
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-init-layers-1 +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-middle +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-last-layer +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-random +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-random.txt
+
+#mbert-uncased - spanish
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-init-layers-1 +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-middle +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-last-layer +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-random +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-spanish-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-spanish-init.py 
+python run_our_experiments/mbert/run_our_experiments-spanish-mid.py
+python run_our_experiments/mbert/run_our_experiments-spanish-last.py
+python run_our_experiments/mbert/run_our_experiments-spanish-random.py
+
+#mbert-uncased - french
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-init-layers-1 +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-middle +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-last-layer +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-french-random +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-french-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-french-init.py 
+python run_our_experiments/mbert/run_our_experiments-french-mid.py
+python run_our_experiments/mbert/run_our_experiments-french-last.py
+python run_our_experiments/mbert/run_our_experiments-french-random.py
+
+#mbert-uncased - bengali
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-init-layers-1 +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-middle +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-last-layer +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-bengali-random +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-bengali-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-bengali-init.py 
+python run_our_experiments/mbert/run_our_experiments-bengali-mid.py
+python run_our_experiments/mbert/run_our_experiments-bengali-last.py
+python run_our_experiments/mbert/run_our_experiments-bengali-random.py
+
+#mbert-uncased - gujarati
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-init-layers-1 +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-middle +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-last-layer +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-last-layer.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-gujarati-random +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-gujarati-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-gujarati-init.py 
+python run_our_experiments/mbert/run_our_experiments-gujarati-mid.py
+python run_our_experiments/mbert/run_our_experiments-gujarati-last.py
+python run_our_experiments/mbert/run_our_experiments-gujarati-random.py
+
+#mbert-uncased - mixed
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-init-layers-1 +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-middle +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-last-layer +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-last-layer.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-mixed-random +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-mixed-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-mixed-init.py 
+python run_our_experiments/mbert/run_our_experiments-mixed-mid.py
+python run_our_experiments/mbert/run_our_experiments-mixed-last.py
+python run_our_experiments/mbert/run_our_experiments-mixed-random.py
+
+#mbert-uncased - inverse
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-inverse-init-layers-1 +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-inverse-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-inverse-middle +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-inverse-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-inverse-last-layer +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-inverse-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-inverse-random +tests=False +lang=inverse ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-inverse-random.txt
+
+python run_our_experiments/mbert/run_our_experiments-inverse-init.py 
+python run_our_experiments/mbert/run_our_experiments-inverse-mid.py
+python run_our_experiments/mbert/run_our_experiments-inverse-last.py
+python run_our_experiments/mbert/run_our_experiments-inverse-random.py
+
+# Malayalam
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-init-layers-1 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-init-layers-2 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-middle +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-last-layer +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-random +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-malayalam-full +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-malayalam-full.txt
+
+# Tamil
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-init-layers-1 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-init-layers-2 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-middle +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-last-layer +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-last.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-random +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-tamil-full +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-tamil-full.txt
+
+# Kannada
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-init-layers-1 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-init-layers-2 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-middle +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-last-layer +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-random +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-kannada-full +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-kannada-full.txt
+
+
+# Chinese
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-init-layers-1 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-init-layers-2 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-init-2.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-middle +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-last-layer +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-last.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-random +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-random.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=mbert-uncased-chinese-full +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-chinese-full.txt
+
+# Arabic
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-init-layers-1 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-init-layers-2 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-middle +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-last-layer +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-random +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-arabic-full +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-arabic-full.txt
+
+
+======================================================================================================================================================
+# XLM-RoBERTa
+
+python xlm-roberta-fever-english.py | tee logs/xlm-roberta-fever-english.txt
+python xlm-roberta-fever-hindi.py | tee logs/xlm-roberta-fever-hindi.txt
+python xlm-roberta-fever-spanish.py | tee logs/xlm-roberta-fever-spanish.txt
+python xlm-roberta-fever-french.py | tee logs/xlm-roberta-fever-french.txt
+python xlm-roberta-fever-bengali.py | tee logs/xlm-roberta-fever-bengali.txt
+python xlm-roberta-fever-gujarati.py | tee logs/xlm-roberta-fever-gujarati.txt
+python xlm-roberta-fever-mixed.py | tee logs/xlm-roberta-fever-mixed.txt
+python xlm-roberta-fever-inverse_mixed.py | tee logs/xlm-roberta-fever-inverse_mixed.txt
+
+
+
+#xlm-roberta - english
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-english-init-layers-1 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-english-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-english-middle +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-english-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-english-last-layer +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-english-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-english-random +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-english-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-english-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-english-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-english-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-english-random.py 
+
+#xlm-roberta - hindi
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-hindi-init-layers-1 +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-hindi-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-hindi-middle +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-hindi-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-hindi-last-layer +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-hindi-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-hindi-random +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-hindi-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-hindi-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-hindi-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-hindi-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-hindi-random.py 
+
+#xlm-roberta - spanish
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-spanish-init-layers-1 +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-spanish-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-spanish-middle +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-spanish-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-spanish-last-layer +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-spanish-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-spanish-random +tests=False +lang=spanish ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-spanish-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-spanish-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-spanish-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-spanish-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-spanish-random.py 
+
+#xlm-roberta - french
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-french-init-layers-1 +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-french-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-french-middle +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-french-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-french-last-layer +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-french-last-layer.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-french-random +tests=False +lang=french ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-french-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-french-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-french-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-french-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-french-random.py 
+
+#xlm-roberta - bengali
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-bengali-init-layers-1 +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-bengali-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-bengali-middle +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-bengali-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-bengali-last-layer +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-bengali-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-bengali-random +tests=False +lang=bengali ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-bengali-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-bengali-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-bengali-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-bengali-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-bengali-random.py 
+
+#xlm-roberta - gujarati
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-gujarati-init-layers-1 +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-gujarati-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-gujarati-middle +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-gujarati-middle.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-gujarati-last-layer +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-gujarati-last-layer.txt
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-gujarati-random +tests=False +lang=gujarati ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-gujarati-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-gujarati-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-gujarati-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-gujarati-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-gujarati-random.py 
+
+#xlm-roberta - mixed
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-mixed-init-layers-1 +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-mixed-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-mixed-middle +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-mixed-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-mixed-last-layer +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-mixed-last-layer.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-mixed-random +tests=False +lang=mixed ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-mixed-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-mixed-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-mixed-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-mixed-last-layer.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-mixed-random.py 
+
+#xlm-roberta - inverse
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=xlm-roberta-inverse-init-layers-1 +tests=False +lang=inverse-xlm ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-inverse-init-layers-1.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-inverse-middle +tests=False +lang=inverse-xlm ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-inverse-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-inverse-last-layer +tests=False +lang=inverse-xlm ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-inverse-last-layer.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-inverse-random +tests=False +lang=inverse-xlm ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-inverse-random.txt
+
+python run_our_experiments/xlm-roberta/run_our_experiments-inverse-init.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-inverse-mid.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-inverse-last.py 
+python run_our_experiments/xlm-roberta/run_our_experiments-inverse-random.py
+
+
+# Malayalam
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-init-layers-1 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-init-layers-2 +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-middle +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-last-layer +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-random +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-malayalam-full +tests=False +lang=malayalam ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-malayalam-full.txt
+
+# Tamil
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-init-layers-1 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-init-layers-2 +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-init-2.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-middle +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-middle.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-last-layer +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-last.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-random +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-tamil-full +tests=False +lang=tamil ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-tamil-full.txt
+
+# Kannada
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-init-layers-1 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-init-layers-2 +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-middle +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-last-layer +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-random +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-random.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-kannada-full +tests=False +lang=kannada ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-kannada-full.txt
+
+# Chinese
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-init-layers-1 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-init-layers-2 +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-init-2.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-middle +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-last-layer +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-last.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-random +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-random.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-chinese-full +tests=False +lang=chinese ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-chinese-full.txt
+
+# Arabic
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-init-layers-1 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-init-1.txt
+CUDA_VISIBLE_DEVICES=x python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-init-layers-2 +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-init-2.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-middle +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-middle.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-last-layer +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-last.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-random +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-random.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=xlm-roberta-arabic-full +tests=False +lang=arabic ++eval_only=False ++train=True | tee logs/mend-xlm-roberta-arabic-full.txt
+
+
+
+======================================================================================================================================================
+
+
+
+
+
+
+
+
+
+======================================================================================================================================================
+# Temp
+CUDA_VISIBLE_DEVICES=3 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-init-layers-1 +tests=False +lang=hindi | tee logs/mend-bloom-560m-hindi-init-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-init-layers-1 +tests=False +lang=spanish | tee logs/mend-bloom-560m-spanish-init-1.txt
+
+
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-init-layers-2 +tests=False +lang=english | tee logs/mend-bloom-560m-english-init-2.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-hindi-init-layers-2 +tests=False +lang=hindi | tee logs/mend-bloom-560m-hindi-init-2.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-spanish-init-layers-2 +tests=False +lang=spanish | tee logs/mend-bloom-560m-spanish-init-2.txt
+
+
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-init-layers-1 +tests=False +lang=french ++eval_only=False ++train=True| tee logs/mend-bloom-560m-french-init-1.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-init-layers-2 +tests=False +lang=french ++eval_only=False ++train=True| tee logs/mend-bloom-560m-french-init-2.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-middle +tests=False +lang=french ++eval_only=False ++train=True| tee logs/mend-bloom-560m-french-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-last-layer +tests=False +lang=french ++eval_only=False ++train=True| tee logs/mend-bloom-560m-french-last.txt
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-french-random +tests=False +lang=french ++eval_only=False ++train=True| tee logs/mend-bloom-560m-french-random.txt
+
+
+==================================================================================================================================================================================
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-init-layers-1 +tests=False +lang=english | tee logs/mend-mbert-uncased-english-init-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-middle +tests=False +lang=english | tee logs/mend-mbert-uncased-english-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-english-last-layer +tests=False +lang=english | tee logs/mend-mbert-uncased-english-last.txt
+
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-init-layers-1 +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-init-1.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-middle +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-middle.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-hindi-last-layer +tests=False +lang=hindi ++eval_only=False ++train=True | tee logs/mend-mbert-uncased-hindi-last.txt
+
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-init-layers-1 +tests=False +lang=spanish | tee logs/mend-mbert-uncased-spanish-init-1.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-middle +tests=False +lang=spanish | tee logs/mend-mbert-uncased-spanish-middle.txt
+CUDA_VISIBLE_DEVICES=1 python -m run +alg=mend +experiment=fc +model=mbert-uncased-spanish-last-layer +tests=False +lang=spanish | tee logs/mend-mbert-uncased-spanish-last.txt
+
+
+#BERT
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bert-base-pred +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bert-base-english-pred.txt
+CUDA_VISIBLE_DEVICES=2 python -m run +alg=mend +experiment=fc +model=bert-base-out +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bert-base-english-out.txt
+

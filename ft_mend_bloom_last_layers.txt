@@ -1,0 +1,146 @@
+[2023-03-26 23:45:29,875][__main__][INFO] - 
+
+alg: ft
+lr: 1.0e-05
+edit_lr: 5.0e-06
+seed: 0
+debug: false
+model_save_pt: 5000
+edit_bs: 1
+silent: false
+max_iters: 1000000
+log_interval: 100
+val_interval: 5000
+lr_lr: 0.001
+batch_size: 2
+val_batch_size: 5
+accumulate_bs: 10
+cedit: 0.1
+cloc: 1.0
+cbase: 1.0
+val_steps: 500
+device: cuda
+base_loss: distill
+oracle: false
+train: true
+train_base: false
+opt: Adam
+single_batch: false
+archive: null
+grad_clip: 100.0
+ref: null
+early_stop_patience: 20000
+early_stop_key: loss/total_edit_val
+dropout: 0.0
+tokenizer: null
+results_dir: null
+no_grad_layers: null
+eval_only: false
+half: false
+save: false
+model:
+  pt: ${hydra:runtime.cwd}/data/fever/bloom-560m-not-finetuned.bin
+  name: bigscience/bloom-560m
+  class_name: BloomForSequenceClassification
+  tokenizer_class: BloomTokenizerFast
+  tokenizer_name: bigscience/bloom-560m
+  inner_params:
+  - transformer.h.20.mlp.dense_h_to_4h.weight
+  - transformer.h.20.mlp.dense_4h_to_h.weight
+  - transformer.h.21.mlp.dense_h_to_4h.weight
+  - transformer.h.21.mlp.dense_4h_to_h.weight
+  - transformer.h.22.mlp.dense_h_to_4h.weight
+  - transformer.h.22.mlp.dense_4h_to_h.weight
+  - transformer.h.23.mlp.dense_h_to_4h.weight
+  - transformer.h.23.mlp.dense_4h_to_h.weight
+data:
+  path: null
+  rephrase: true
+  zsre_nq: true
+  nq_path: ${hydra:runtime.cwd}/data/nq
+  wiki_webtext: true
+  n_edits: 1
+eval:
+  verbose: true
+  log_interval: 100
+  final_eval: true
+ft:
+  verbose: false
+  max_edit_steps: 100
+  time_limit: null
+  locality:
+    enabled: false
+    oracle: true
+    cedit: 0.01
+    batch_size: 1
+  rank: null
+  opt: RMSprop
+  init_std: 0.01
+task: fc
+dataset: fever
+tests: false
+
+
+[2023-03-26 23:45:29,875][__main__][INFO] - Project base directory: /home/anonymous-xme/mend/mend
+[2023-03-26 23:45:29,914][models][INFO] - Loading model class <class 'transformers.models.bloom.modeling_bloom.BloomForSequenceClassification'> with name bigscience/bloom-560m from cache dir /home/anonymous-xme/mend/mend/cache/
+[2023-03-26 23:45:35,097][models][INFO] - Loading model initialization from /home/anonymous-xme/mend/mend/data/fever/bloom-560m-not-finetuned.bin
+1. Model config:  BloomConfig {
+  "_name_or_path": "bigscience/bloom-560m",
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "BloomForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "bias_dropout_fusion": true,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_dropout": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "masked_softmax_fusion": true,
+  "model_type": "bloom",
+  "n_head": 16,
+  "n_inner": null,
+  "n_layer": 24,
+  "offset_alibi": 100,
+  "pad_token_id": 3,
+  "pretraining_tp": 1,
+  "skip_bias_add": true,
+  "skip_bias_add_qkv": false,
+  "slow_but_exact": false,
+  "transformers_version": "4.26.1",
+  "unk_token_id": 0,
+  "use_cache": true,
+  "vocab_size": 250880
+}
+
+
+
+
+
+
+
+
+
+
+[2023-03-26 23:45:36,348][models][INFO] - Loaded model initialization
+[2023-03-26 23:45:36,350][models][INFO] - Set 24 dropout modules to p=0.0
+Data Size:  104422
+Data Size:  10364
+[2023-03-26 23:45:39,846][__main__][INFO] - Loading class FT from module <module 'algs.ft' from '/home/anonymous-xme/mend/mend/algs/ft.py'>
+[2023-03-26 23:45:44,294][trainer][INFO] - Building optimizer <class 'torch.optim.adam.Adam'> with lr 1e-05
+[2023-03-26 23:45:44,297][trainer][INFO] - Writing wandb run "fever - ft - bloom-560m - 2023-03-26_23-45-29_844263459" to /tmp/tmp76uqfvhd
+[2023-03-26 23:45:47,885][trainer][INFO] - Step 0:
+[2023-03-26 23:45:47,885][trainer][INFO] - loss/edit_train:  0.00001; loss/loc_train: -0.00000; edit/acc_train:  1.00000; edit/log_prob_train: -0.00001; edit/prob_train:  0.99999; acc/pre_train:  1.00000; acc/post_train:  1.00000; nll/pre_train:  0.00000; perplexity/pre_train:  1.00000; nll/post_train:  0.00000; perplexity/post_train:  1.00000; n_tokens/pre_train:  1.00000; n_tokens/post_train:  1.00000; time/edit_train:  0.23020; loss/total_train:  0.00000; loss/total_edit_train:  0.00000; memory/alloc_max_train:  6844826112.00000; memory/res_max_train:  6975127552.00000
+[2023-03-26 23:47:26,485][trainer][INFO] - Step 0:
+[2023-03-26 23:47:26,486][trainer][INFO] - loss/edit_val:  54.25029; loss/loc_val:  0.28874; edit/acc_val:  0.61600; edit/log_prob_val: -54.25029; edit/prob_val:  0.61557; acc/pre_val:  0.50300; acc/post_val:  0.49900; nll/pre_val:  81.86604; perplexity/pre_val:  358068749041204645973530922417389568.00000; nll/post_val:  75.11677; perplexity/post_val:  419562638114601082768811181998080.00000; n_tokens/pre_val:  4.00000; n_tokens/post_val:  4.00000; time/edit_val:  0.13202; loss/total_val:  5.71376; loss/total_edit_val:  5.71376; memory/alloc_max_val:  6844826112.00000; memory/res_max_val:  7069079961.60000; eval_time/elapsed:  98.57421; eval_time/average:  0.19715
+[2023-03-26 23:47:26,490][trainer][INFO] - Saving model to /home/anonymous-xme/mend/mend/outputs/2023-03-26_23-45-29_844263459/models/bloom-560m.2023-03-26_23-45-29_844263459
+[2023-03-26 23:47:30,489][trainer][INFO] - Write complete.
+[2023-03-26 23:48:06,516][trainer][INFO] - Step 100:
+[2023-03-26 23:48:06,517][trainer][INFO] - loss/edit_train:  22.18731; loss/loc_train:  0.18938; edit/acc_train:  0.74000; edit/log_prob_train: -22.18731; edit/prob_train:  0.73500; acc/pre_train:  0.71000; acc/post_train:  0.71000; nll/pre_train:  42.31517; perplexity/pre_train:  2383660394913726464.00000; nll/post_train:  38.72541; perplexity/post_train:  65800612666671104.00000; n_tokens/pre_train:  1.00000; n_tokens/post_train:  1.00000; time/edit_train:  0.10260; loss/total_train:  2.40811; loss/total_edit_train:  2.40811; memory/alloc_max_train:  12680801904.64000; memory/res_max_train:  13820860825.60000; grad_train:  163.71339
+[2023-03-26 23:48:42,078][trainer][INFO] - Step 200:
+[2023-03-26 23:48:42,079][trainer][INFO] - loss/edit_train:  8.46207; loss/loc_train:  0.69728; edit/acc_train:  0.77000; edit/log_prob_train: -8.46207; edit/prob_train:  0.77392; acc/pre_train:  0.77000; acc/post_train:  0.77000; nll/pre_train:  25.59487; perplexity/pre_train:  130529484800.00000; nll/post_train:  21.29918; perplexity/post_train:  1778763264.00000; n_tokens/pre_train:  1.00000; n_tokens/post_train:  1.00000; time/edit_train:  0.09038; loss/total_train:  1.54348; loss/total_edit_train:  1.54348; memory/alloc_max_train:  13105383936.00000; memory/res_max_train:  14287644917.76000; grad_train:  211.73753
+[2023-03-26 23:49:16,464][trainer][INFO] - Step 300:
+[2023-03-26 23:49:16,465][trainer][INFO] - loss/edit_train:  3.59519; loss/loc_train:  0.41746; edit/acc_train:  0.84000; edit/log_prob_train: -3.59519; edit/prob_train:  0.84716; acc/pre_train:  0.71000; acc/post_train:  0.69000; nll/pre_train:  23.44090; perplexity/pre_train:  15144481792.00000; nll/post_train:  19.66708; perplexity/post_train:  347778208.00000; n_tokens/pre_train:  1.00000; n_tokens/post_train:  1.00000; time/edit_train:  0.08541; loss/total_train:  0.77698; loss/total_edit_train:  0.77698; memory/alloc_max_train:  13105383936.00000; memory/res_max_train:  14308868096.00000; grad_train:  146.37852

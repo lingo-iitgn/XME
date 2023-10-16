@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python -m run +alg=mend +experiment=fc +model=bloom-560m-english-init-layers-1 +tests=False +lang=english ++eval_only=False ++train=True | tee logs/mend-bloom-560m-english-init-1.txt

@@ -1,0 +1,14 @@
+name: bert-base-multilingual-uncased
+class_name: BertForSequenceClassification 
+tokenizer_class: BertTokenizer
+tokenizer_name: bert-base-multilingual-uncased
+inner_params:
+- bert.encoder.layer.7.intermediate.dense.weight
+- bert.encoder.layer.7.output.dense.weight
+- bert.encoder.layer.8.intermediate.dense.weight
+- bert.encoder.layer.8.output.dense.weight
+- bert.encoder.layer.9.intermediate.dense.weight
+- bert.encoder.layer.9.output.dense.weight
+
+
+# pt: ${hydra:runtime.cwd}/data/fever/bert-base-multilingual-uncased-notFT_state_dict_mid_layers.bin

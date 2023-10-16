@@ -1,0 +1,16 @@
+name: bert-base-multilingual-uncased
+class_name: AutoModelForSequenceClassification
+tokenizer_class: AutoTokenizer
+tokenizer_name: bert-base-multilingual-uncased
+inner_params:
+- bert.encoder.layer.4.intermediate.dense.weight
+- bert.encoder.layer.4.output.dense.weight
+- bert.encoder.layer.5.intermediate.dense.weight
+- bert.encoder.layer.5.output.dense.weight
+- bert.encoder.layer.6.intermediate.dense.weight
+- bert.encoder.layer.6.output.dense.weight
+- bert.encoder.layer.7.intermediate.dense.weight
+- bert.encoder.layer.7.output.dense.weight
+
+
+pt:  /home/anonymous-xme/bloom-finetune/results/mbert-uncased/finetuning-fever-1L-malayalam-lr15-wt13-pred/checkpoint-9843/pytorch_model.bin

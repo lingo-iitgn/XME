@@ -1,0 +1,17 @@
+name: xlm-roberta-base
+class_name: AutoModelForSequenceClassification
+tokenizer_class: AutoTokenizer
+tokenizer_name: xlm-roberta-base
+inner_params:
+
+- roberta.encoder.layer.4.intermediate.dense.weight
+- roberta.encoder.layer.4.output.dense.weight
+- roberta.encoder.layer.5.intermediate.dense.weight
+- roberta.encoder.layer.5.output.dense.weight
+- roberta.encoder.layer.6.intermediate.dense.weight
+- roberta.encoder.layer.6.output.dense.weight
+- roberta.encoder.layer.7.intermediate.dense.weight
+- roberta.encoder.layer.7.output.dense.weight
+
+
+pt: /home/anonymous-xme/bloom-finetune/results/xlm-roberta/finetuning-fever-1L-lr15-malayalam-rerun/checkpoint-3281/pytorch_model.bin

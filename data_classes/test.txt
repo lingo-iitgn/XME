@@ -1,0 +1,39 @@
+>>>> Toks {'input_ids': tensor([[  101, 24806,   143, 10127, 10144, 10600, 21342, 18422, 33440,   119,
+           102,     0,     0,     0],
+        [  101, 76774, 10112, 10127, 10144, 10465,   119,   102,     0,     0,
+             0,     0,     0,     0],
+        [  101, 41684, 86079, 10911, 10127, 10144, 13544, 10203, 14548, 10104,
+         10141, 13650,   119,   102],
+        [  101, 89291, 10700, 10127,   143, 11497, 10108, 10901,   119,   102,
+             0,     0,     0,     0],
+        [  101, 71858, 14759,   113, 10388,   114, 10407, 17209, 19777,   119,
+           102,     0,     0,     0]]), 'token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]]), 'cond_input_ids': tensor([[  101, 39149, 34746,   135,   135, 39548,   170,   170, 71858, 14759,
+           113, 10388,   114, 10407, 17209, 19777,   119,   102]]), 'cond_token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'cond_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]), 'rephrase_input_ids': tensor([[  101,   576, 62687, 61210, 73349, 14256,   113, 29565,   114, 10944,
+         37955,   573, 13043, 25172, 17024, 15721,   591,   102]]), 'rephrase_token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'rephrase_attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]), 'predictions': tensor([0, 1, 1, 1, 0]), 'labels': tensor([0, 1, 0, 1, 1]), 'raw': [{'label': False, 'src': 'Easy A is an American teen comedy poem.', 'rephrase': 'ईज़ी ए एक अमेरिकी कॉमेडी कविता है।', 'pred': False, 'alt': True, 'cond_flip': 'REFUTES >> SUPPORTS || Easy A is an American teen comedy poem.', 'cond_orig': 'REFUTES >> REFUTES || Easy A is an American teen comedy poem.', 'logit': -4.05230712890625}, {'label': True, 'src': 'Meteora is an album.', 'rephrase': 'मेटोरा अमेरिकी निर्देशक मेटोरा का एक एल्बम है।', 'pred': True, 'alt': False, 'cond_flip': 'SUPPORTS >> REFUTES || Meteora is an album.', 'cond_orig': 'SUPPORTS >> SUPPORTS || Meteora is an album.', 'logit': 0.661582887172699}, {'label': False, 'src': 'Jayasudha is an actor that stars in Daag.', 'rephrase': 'जयसधा एक अभिनेता है, जो दाग में खेलता है।', 'pred': True, 'alt': False, 'cond_flip': 'SUPPORTS >> REFUTES || Jayasudha is an actor that stars in Daag.', 'cond_orig': 'SUPPORTS >> SUPPORTS || Jayasudha is an actor that stars in Daag.', 'logit': 4.442840099334717}, {'label': True, 'src': 'Knocked Up is a work of art.', 'rephrase': 'दस्तक दी कला का एक टुकड़ा है।', 'pred': True, 'alt': False, 'cond_flip': 'SUPPORTS >> REFUTES || Knocked Up is a work of art.', 'cond_orig': 'SUPPORTS >> SUPPORTS || Knocked Up is a work of art.', 'logit': 3.6736223697662354}, {'label': False, 'src': 'Varsity Blues (film) had zero reviews.', 'rephrase': 'वर्सिटी ब्लूज़ (फिल्म) की कोई रेटिंग नहीं थी।', 'pred': False, 'alt': True, 'cond_flip': 'REFUTES >> SUPPORTS || Varsity Blues (film) had zero reviews.', 'cond_orig': 'REFUTES >> REFUTES || Varsity Blues (film) had zero reviews.', 'logit': -3.443254232406616}]}
+>>>> Edit Inner {'input_ids': tensor([[  101, 71858, 14759,   113, 10388,   114, 10407, 17209, 19777,   119,
+           102,     0,     0,     0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]]), 'labels': tensor([1])}
+>>>> Edit Outer {'input_ids': tensor([[  101,   576, 62687, 61210, 73349, 14256,   113, 29565,   114, 10944,
+         37955,   573, 13043, 25172, 17024, 15721,   591,   102]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]), 'labels': tensor([1])}
+>>>> Loc {'input_ids': tensor([[  101, 24806,   143, 10127, 10144, 10600, 21342, 18422, 33440,   119,
+           102,     0,     0,     0],
+        [  101, 76774, 10112, 10127, 10144, 10465,   119,   102,     0,     0,
+             0,     0,     0,     0],
+        [  101, 41684, 86079, 10911, 10127, 10144, 13544, 10203, 14548, 10104,
+         10141, 13650,   119,   102],
+        [  101, 89291, 10700, 10127,   143, 11497, 10108, 10901,   119,   102,
+             0,     0,     0,     0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]]), 'labels': tensor([0, 1, 0, 1])}
+
+
+englih - hindi
+X (eng) repha (hi)

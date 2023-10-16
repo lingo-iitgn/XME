@@ -1,0 +1,16 @@
+name: bigscience/bloom-560m
+class_name: BloomForSequenceClassification
+tokenizer_class: BloomTokenizerFast
+tokenizer_name: bigscience/bloom-560m
+inner_params:
+- transformer.h.8.mlp.dense_h_to_4h.weight
+- transformer.h.8.mlp.dense_4h_to_h.weight
+- transformer.h.13.mlp.dense_h_to_4h.weight
+- transformer.h.13.mlp.dense_4h_to_h.weight
+- transformer.h.17.mlp.dense_h_to_4h.weight
+- transformer.h.17.mlp.dense_4h_to_h.weight
+- transformer.h.21.mlp.dense_h_to_4h.weight
+- transformer.h.21.mlp.dense_4h_to_h.weight
+
+
+pt:  /home/anonymous-xme/bloom-finetune/results/bloom-560m/finetuning-fever-1L-lr15-wt12-chinese-pred/checkpoint-6562/pytorch_model.bin
